@@ -30,3 +30,18 @@ test5 = requests.get(BASE + "waifulist", {"name": "Lynn Wiles", "anime": "Pulse"
 print(test5.json())
 test6 = requests.get(BASE + "waifulist")
 print(test6.json())
+
+# PUT method test
+test7 = requests.put(BASE + "waifulist", {"id": 1, "name": "Lynn Wiles", "anime": "Pulse", "rank": 1})
+print(test7.json())
+test8 = requests.put(BASE + "waifulist", {"id": 2, "name": "Makise Kurisu", "anime": "Steins;Gate", "rank": 2})
+print(test8.json())
+test9 = requests.put(BASE + "waifulist", {"name": "Makise Kurisu", "anime": "Steins;Gate", "rank": 1})
+print(test9.json())
+
+# DELETE method test
+# I don't know why you have to specify params here, but it doesn't work otherwise
+test10 = requests.delete(BASE + "waifulist", params={"name": "Makise Kurisu"})
+print(test10.json())
+test11 = requests.delete(BASE + "waifulist", params={"name": "Makise Kurisu"})
+print(test11.json())
