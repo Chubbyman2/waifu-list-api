@@ -9,12 +9,19 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///waifu_database.db' # Creates 
 db = SQLAlchemy(app)
 
 # Input args
-# Set mandatory parameters that must be passed for database commands
-waifu_args = reqparse.RequestParser()
-waifu_args.add_argument("name", type=str, help="Name of the waifu is required.", required=True)
-waifu_args.add_argument("anime", type=str, help="Name of the waifu's anime is required.", required=True)
-waifu_args.add_argument("rank", type=int, help="Rank of the waifu is required.", required=True)
+# Set mandatory parameters that must be passed for the POST command
+waifu_post_args = reqparse.RequestParser()
+waifu_post_args.add_argument("id", type=str, help="ID of the waifu is required.", required=True)
+waifu_post_args.add_argument("name", type=str, help="Name of the waifu is required.", required=True)
+waifu_post_args.add_argument("anime", type=str, help="Name of the waifu's anime is required.", required=True)
+waifu_post_args.add_argument("rank", type=int, help="Rank of the waifu is required.", required=True)
 
+# For the rest, I'll be more lenient
+waifu_args = reqparse.RequestParser()
+waifu_args.add_argument("id", type=str, required=False)
+waifu_args.add_argument("name", type=str, required=False)
+waifu_args.add_argument("anime", type=str, required=False)
+waifu_args.add_argument("rank", type=int, required=False)
 
 class WaifuEntry(db.Model):
     id = db.Column(db.Integer, primary_key=True) # primary_key=True makes id a unique identifier
@@ -38,18 +45,17 @@ class WaifuList(Resource):
     }
 
     @marshal_with(resource_fields)
-    def post(self, waifu_id):
+    def post(self):
         '''
         POST is for adding new entries to the list/database.
         The description is made optional, with all else being mandatory.
         '''
 
         # Parse inputted args and create a new waifu entry
-        args = waifu_args.parse_args()
+        args = waifu_post_args.parse_args()
 
         # Check if it's a repeat entry (for ID and name)
-        id_result = WaifuEntry.query.filter_by(id=waifu_id).first()
-        
+        id_result = WaifuEntry.query.filter_by(id=args["id"]).first()
         if id_result:
             abort(409, message="ID taken...")
         name_result = WaifuEntry.query.filter_by(name=args["name"]).first()
@@ -62,7 +68,7 @@ class WaifuList(Resource):
             res.rank += 1
         
         # Finally, add new entry
-        waifu = WaifuEntry(id=waifu_id, name=args["name"], anime=args["anime"], rank=args["rank"])
+        waifu = WaifuEntry(id=args["id"], name=args["name"], anime=args["anime"], rank=args["rank"])
 
         # Commit addition (and changes) to database
         db.session.add(waifu)
@@ -72,13 +78,47 @@ class WaifuList(Resource):
         # No strings, no ints, no JSON + strings!!!
         return waifu
 
+    
+    @marshal_with(resource_fields)
+    def get(self):
+        '''
+        Since id, name, rank are all unique, allow for querying by these options.
+        I can't think of a better way than 6 conditional statements.
+        Feel free to make a PR if you do.
+        '''
+        args = waifu_args.parse_args()
+
+        if args["name"] and args["anime"] and args["rank"]:
+            result = WaifuEntry.query.filter_by(name=args["name"], anime=args["anime"], rank=args["rank"]).first()
+            return result
+        elif args["name"] and args["anime"]:
+            result = WaifuEntry.query.filter_by(name=args["name"], anime=args["anime"]).first()
+            return result
+        elif args["anime"] and args["rank"]:
+            result = WaifuEntry.query.filter_by(anime=args["anime"], rank=args["rank"]).first()
+            return result
+        elif args["name"] and args["rank"]:
+            result = WaifuEntry.query.filter_by(name=args["name"], rank=args["rank"]).first()
+            return result
+        elif args["name"]:
+            result = WaifuEntry.query.filter_by(name=args["name"]).first()
+            return result
+        elif args["anime"]:
+            result = WaifuEntry.query.filter_by(name=args["anime"]).first()
+            return result
+        elif args["rank"]:
+            result = WaifuEntry.query.filter_by(name=args["rank"]).first()
+            return result
+        else:
+            abort(409, message="Cannot query without name, anime, or rank parameters. Please enter at least one.")
+
 
 if __name__ == "__main__":
     # Create database
     db.create_all()
 
     # Add the Resource class as an API accessible through the given endpoint (i.e. "/waifulist")
-    api.add_resource(WaifuList, "/waifulist/<int:waifu_id>")
+    api.add_resource(WaifuList, "/waifulist")
 
     # Run app
     app.run(debug=True)
