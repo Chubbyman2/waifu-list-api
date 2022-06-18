@@ -1,6 +1,11 @@
+import os
+from flask import request
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Resource, reqparse, abort, fields, marshal_with
 
+# For admin access privileges
+PASSWORD = os.environ["PASSWORD"]
+# PASSWORD = "Melanie"
 
 # Create database, bind to app later
 db = SQLAlchemy()
@@ -11,6 +16,7 @@ waifu_post_args.add_argument("id", type=str, help="ID of the waifu is required."
 waifu_post_args.add_argument("name", type=str, help="Name of the waifu is required.", required=True)
 waifu_post_args.add_argument("anime", type=str, help="Name of the waifu's anime is required.", required=True)
 waifu_post_args.add_argument("rank", type=int, help="Rank of the waifu is required.", required=True)
+waifu_post_args.add_argument("password", type=str, required=False)
 
 # For the others (i.e. GET, PUT, DELETE), I'll be more lenient
 waifu_args = reqparse.RequestParser()
@@ -18,6 +24,7 @@ waifu_args.add_argument("id", type=str, required=False)
 waifu_args.add_argument("name", type=str, required=False)
 waifu_args.add_argument("anime", type=str, required=False)
 waifu_args.add_argument("rank", type=int, required=False)
+waifu_args.add_argument("password", type=str, required=False)
 
 
 class WaifuEntry(db.Model):
@@ -70,6 +77,12 @@ class WaifuList(Resource):
         # Parse inputted args and create a new waifu entry
         args = waifu_post_args.parse_args()
 
+        # Admin password check
+        if not args["password"]:
+            abort(401, message="Please input password in parameters.")
+        if args["password"] != PASSWORD:
+            abort(401, message="Incorrect password.")  
+
         # Check if it's a repeat entry (for ID and name)
         id_result = WaifuEntry.query.filter_by(id=args["id"]).first()
         if id_result:
@@ -121,6 +134,12 @@ class WaifuList(Resource):
         '''
         args = waifu_args.parse_args()
 
+        # Admin password check
+        if not args["password"]:
+            abort(401, message="Please input password in parameters.")
+        if args["password"] != PASSWORD:
+            abort(401, message="Incorrect password.")  
+
         result = WaifuEntry.query.filter_by(id=args["id"]).first()
         if result:
             # Check one by one for changes, don't change if param is None or ID
@@ -143,6 +162,12 @@ class WaifuList(Resource):
         Use the same helper function.        
         '''
         args = waifu_args.parse_args()
+
+        # Admin password check
+        if not args["password"]:
+            abort(401, message="Please input password in parameters.")
+        if args["password"] != PASSWORD:
+            abort(401, message="Incorrect password.")  
 
         result = query(waifu_id=args["id"], waifu_name=args["name"], waifu_rank=args["rank"])
         if result:
