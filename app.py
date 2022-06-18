@@ -12,13 +12,14 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///waifu_database.db' # Creates 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Just to get rid of that annoying warning message
 db.init_app(app) # To avoid circular import
 db = SQLAlchemy(app) # Bind to app after creation in api.py
-BASE = "http://127.0.0.1:5000/"
+# BASE = "http://127.0.0.1:5000/"
+BASE = "https://waifu-list-api.herokuapp.com"
 
 
 # Home page
 @app.route("/")
 def index():
-    return render_template("index.html", test=waifu_list())
+    return render_template("index.html", len=len(waifu_list()), waifus=waifu_list())
 
 
 def waifu_list():
@@ -31,9 +32,9 @@ def waifu_list():
     cur = con.cursor()
 
     cur.execute("SELECT * from waifu_entry")
-    waifu = cur.fetchone()
+    waifus = cur.fetchall()
 
-    return waifu
+    return waifus
 
 
 if __name__ == "__main__":
