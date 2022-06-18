@@ -34,12 +34,15 @@ def waifu_list():
     Somewhat obviously, you cannot call the API from within the API.
     So I have to use a different method of accessing the database (sqlite3).
     '''
+    '''
     # con = sqlite3.connect("waifu_database.db")
     con = sqlite3.connect(os.environ['DATABASE_URL'])
     cur = con.cursor()
 
     cur.execute("SELECT * from waifu_entry")
     waifus = cur.fetchall()
+    '''
+    waifus = [["1", "Lynn Wiles", "Pulse", "1"], ["2", "Makise Kurisu", "Steins;Gate", "2"]]
 
     return waifus
 
