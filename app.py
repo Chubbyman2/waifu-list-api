@@ -1,3 +1,4 @@
+import os
 import sqlite3
 from api import db, WaifuList
 from flask import Flask, render_template
@@ -5,11 +6,16 @@ from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 
 
+# Deploy on Heroku
+# https://medium.com/the-andela-way/deploying-your-flask-application-to-heroku-c99050bce8f9 
+
+
 # Set up Flask
 app = Flask(__name__)
 api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///waifu_database.db' # Creates waifu_database.db in current directory
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Just to get rid of that annoying warning message
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 db.init_app(app) # To avoid circular import
 db = SQLAlchemy(app) # Bind to app after creation in api.py
 # BASE = "http://127.0.0.1:5000/"
