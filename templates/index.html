@@ -6,8 +6,16 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    Waifu: {{ test[1] }}
-    <br>Series: {{ test[2] }}
-    <br>Rank: {{ test[3] }}
+    
+    <ol>
+        {%for i in range(0, len)%}
+        <li>{{ waifus[i][1] }}</li>
+        <ul>
+            <li>Anime: {{ waifus[i][2] }}</li>
+            <li>Rank: {{ waifus[i][3] }}</li>
+        </ul>
+        {%endfor%}
+    </ol>
+    
 </body>
 </html>
