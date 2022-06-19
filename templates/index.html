@@ -6,13 +6,12 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
     <ol>
         {%for i in range(0, len)%}
-        <li>{{ waifus[i][1] }}</li>
+        <li>{{ waifus[i]["name"] }}</li>
         <ul>
-            <li>Anime: {{ waifus[i][2] }}</li>
-            <li>Rank: {{ waifus[i][3] }}</li>
+            <li>Anime: {{ waifus[i]["anime"] }}</li>
+            <li>Rank: {{ waifus[i]["rank"] }}</li>
         </ul>
         {%endfor%}
     </ol>
