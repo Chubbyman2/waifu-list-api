@@ -15,7 +15,7 @@ api = Api(app)
 # app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///waifu_database.db" # Creates waifu_database.db in current directory
 
 # Heroku ver
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URI"]
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Just to get rid of that annoying warning message
 db.init_app(app) # To avoid circular import
