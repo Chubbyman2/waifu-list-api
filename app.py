@@ -23,6 +23,12 @@ db = SQLAlchemy(app) # Bind to app after creation in api.py
 # BASE = "http://127.0.0.1:5000/"
 BASE = "https://waifu-list-api.herokuapp.com"
 
+# Create database
+db.create_all()
+
+# Add the Resource class as an API accessible through the given endpoint (i.e. "/waifulist")
+api.add_resource(WaifuList, "/waifulist")
+
 
 # Home page
 @app.route("/")
@@ -53,11 +59,5 @@ def waifu_list():
 
 
 if __name__ == "__main__":
-    # Create database
-    db.create_all()
-
-    # Add the Resource class as an API accessible through the given endpoint (i.e. "/waifulist")
-    api.add_resource(WaifuList, "/waifulist")
-
     # Run app
     app.run(debug=True)
