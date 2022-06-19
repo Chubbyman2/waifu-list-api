@@ -54,6 +54,7 @@ def waifu_list():
     cur = con.cursor()
     cur.execute("SELECT * from waifu_entry")
     waifus = cur.fetchall()
+    con.close()
 
     return waifus
 
