@@ -1,4 +1,3 @@
-import os
 import sqlite3
 from api import db, WaifuList
 from flask import Flask, render_template
@@ -9,7 +8,13 @@ from flask_sqlalchemy import SQLAlchemy
 # Set up Flask
 app = Flask(__name__)
 api = Api(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///waifu_database.db' # Creates waifu_database.db in current directory
+
+# Local ver
+# app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///waifu_database.db" # Creates waifu_database.db in current directory
+
+# Heroku ver
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://mmebfnoddiyfdu:a27e7922b693819e741fab27a8ef7dae6333223331f797e86c0d6158d65a2a72@ec2-52-71-23-11.compute-1.amazonaws.com:5432/df1o6v6ncitvl4"
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Just to get rid of that annoying warning message
 db.init_app(app) # To avoid circular import
 db = SQLAlchemy(app) # Bind to app after creation in api.py
@@ -34,8 +39,6 @@ def waifu_list():
     cur = con.cursor()
     cur.execute("SELECT * from waifu_entry")
     waifus = cur.fetchall()
-    
-    # waifus = [["1", "Lynn Wiles", "Pulse", "1"], ["2", "Makise Kurisu", "Steins;Gate", "2"]]
 
     return waifus
 
