@@ -38,6 +38,13 @@ wincertstore==0.2
 zipp==3.8.0
 ```
 
+### Deploying Locally
+With virtual environment:
+```python app.py```
+
+Then, using a separate command terminal:
+```python test.py```
+
 ## Built With
 ### Flask-RESTful
 An extension for Flask that adds support for quickly building REST APIs. Comes and is used in conjunction with Flask. 
