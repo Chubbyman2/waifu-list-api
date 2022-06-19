@@ -1,3 +1,4 @@
+import os
 import pymysql
 import sqlite3
 from api import db, WaifuList
@@ -14,8 +15,7 @@ api = Api(app)
 # app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///waifu_database.db" # Creates waifu_database.db in current directory
 
 # Heroku ver
-# app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://mmebfnoddiyfdu:a27e7922b693819e741fab27a8ef7dae6333223331f797e86c0d6158d65a2a72@ec2-52-71-23-11.compute-1.amazonaws.com:5432/df1o6v6ncitvl4"
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://sql5500726:whE69C32BV@sql5.freesqldatabase.com/sql5500726?charset=utf8mb4"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Just to get rid of that annoying warning message
 db.init_app(app) # To avoid circular import
@@ -55,7 +55,6 @@ def waifu_list():
     cur.execute("SELECT * from waifu_entry")
     waifus = cur.fetchall()
     con.close()
-    print(waifus)
 
     return waifus
 
