@@ -1,0 +1,26 @@
+.waifu-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.waifu-table thead tr th,
+.waifu-table td {
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+.waifu-table th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Every other table entry, make the bg gray */
+.waifu-table tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.waifu-table tr:hover {
+    background-color: black;
+    color: white;
+}
