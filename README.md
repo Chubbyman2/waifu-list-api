@@ -52,8 +52,8 @@ An extension for Flask that adds support for quickly building REST APIs. Comes a
 ### SQLAlchemy 
 Used for creating the mySQL database, as well as sending HTTP methods to the REST API. 
 
-### SQLite3
-Since you can't call an API inside of the API itself, I used SQLite3 to retrieve the waifu entries from the database to display on the front end.
+### SQLite3/PyMySQL
+Since you can't call an API inside of the API itself, I used SQLite3 to retrieve the waifu entries from the database to display on the front end. Since I'm storing the waifus using a remote database, I had to switch to PyMySQL for the deployed version.
 
 ### Heroku
 THIS TOOK WAY LONGER THAN EXPECTED. Deployment is so annoying, I swear... Anyways, the API endpoint and home page are hosted using Heroku, while the SQL database is hosted using <a href="https://www.freesqldatabase.com/">FreeSQLDatabase.com</a> (because it's free).
