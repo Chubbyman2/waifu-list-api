@@ -13,17 +13,15 @@ api = Api(app)
 
 # Local ver
 # app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///waifu_database.db" # Creates waifu_database.db in current directory
+# BASE = "http://127.0.0.1:5000/"
 
 # Heroku ver
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URI"]
+BASE = "https://waifu-list-api.herokuapp.com"
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Just to get rid of that annoying warning message
 db.init_app(app) # To avoid circular import
 db = SQLAlchemy(app) # Bind to app after creation in api.py
-# BASE = "http://127.0.0.1:5000/"
-BASE = "https://waifu-list-api.herokuapp.com"
-
-# Create database
 db.create_all()
 
 # Add the Resource class as an API accessible through the given endpoint (i.e. "/waifulist")
@@ -52,7 +50,7 @@ def waifu_list():
         cursorclass=pymysql.cursors.DictCursor
     )
     cur = con.cursor()
-    cur.execute("SELECT * from waifu_entry")
+    cur.execute("SELECT * from waifu_entry ORDER BY rank")
     waifus = cur.fetchall()
     con.close()
 
