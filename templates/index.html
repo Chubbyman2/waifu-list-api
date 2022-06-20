@@ -27,7 +27,13 @@
             <td>{{ waifus[i]["rank"] }}</td>
             <td>{{ waifus[i]["name"] }}</td>
             <td>{{ waifus[i]["anime"] }}</td>
+            
+            <!-- If you wanna do online imgs -->
+            <td width="50%"><img src="{{ waifus[i]['image'] }}" width="50%"></td>
+
+            <!-- If you wanna do local files
             <td width="50%"><img src="{{ url_for('static', filename='')}}{{ waifus[i]['image'] }}" width="50%"></td>
+            -->
             
             <!-- This is the sqlite3 format
             <td>{{ waifus[i][3] }}</td>
