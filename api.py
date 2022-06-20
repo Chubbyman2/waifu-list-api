@@ -16,6 +16,7 @@ waifu_post_args.add_argument("id", type=str, help="ID of the waifu is required."
 waifu_post_args.add_argument("name", type=str, help="Name of the waifu is required.", required=True)
 waifu_post_args.add_argument("anime", type=str, help="Name of the waifu's anime is required.", required=True)
 waifu_post_args.add_argument("rank", type=int, help="Rank of the waifu is required.", required=True)
+waifu_post_args.add_argument("image", type=str, help="Filepath of the image is required.", required=True)
 waifu_post_args.add_argument("password", type=str, required=False)
 
 # For the others (i.e. GET, PUT, DELETE), I'll be more lenient
@@ -24,6 +25,7 @@ waifu_args.add_argument("id", type=str, required=False)
 waifu_args.add_argument("name", type=str, required=False)
 waifu_args.add_argument("anime", type=str, required=False)
 waifu_args.add_argument("rank", type=int, required=False)
+waifu_args.add_argument("image", type=str, required=False)
 waifu_args.add_argument("password", type=str, required=False)
 
 
@@ -33,6 +35,7 @@ class WaifuEntry(db.Model):
     name = db.Column(db.String(100), nullable=False) # nullable=False means you must enter something
     anime = db.Column(db.String(200), nullable=False)
     rank = db.Column(db.Integer, nullable=False)
+    image = db.Column(db.String(200), nullable=False)
 
     # Special class method used to represent class objects as a string
     # i.e. Returns Waifu() method as a string
@@ -64,7 +67,8 @@ class WaifuList(Resource):
         "id": fields.Integer,
         "name": fields.String,
         "anime": fields.String,
-        "rank": fields.Integer
+        "rank": fields.Integer,
+        "image": fields.String # Images are added as filepaths (use local imgs or ones online)
     }
 
     @marshal_with(resource_fields)
@@ -97,7 +101,7 @@ class WaifuList(Resource):
             res.rank += 1
         
         # Finally, add new entry
-        waifu = WaifuEntry(id=args["id"], name=args["name"], anime=args["anime"], rank=args["rank"])
+        waifu = WaifuEntry(id=args["id"], name=args["name"], anime=args["anime"], rank=args["rank"], image=args["image"])
 
         # Commit addition (and changes) to database
         db.session.add(waifu)
@@ -149,6 +153,8 @@ class WaifuList(Resource):
                 result.anime = args["anime"]
             if args["rank"]:
                 result.rank = args["rank"]
+            if args["image"]:
+                result.image = args["image"]
             db.session.commit() # Always remember to commit when making changes!
             return result
         else:
