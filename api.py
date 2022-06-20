@@ -111,6 +111,7 @@ class WaifuList(Resource):
         db.session.commit()
 
         # Return full img link
+        waifu = waifu.json()
         waifu["image"] = "https://github.com/Chubbyman2/waifu-list-api/blob/main/static/" + waifu["image"]
 
         # Remember to return only JSONs!
@@ -129,6 +130,7 @@ class WaifuList(Resource):
         result = query(waifu_id=args["id"], waifu_name=args["name"], waifu_rank=args["rank"])
         if result:
             # Return full img link
+            result = result.json()
             result["image"] = "https://github.com/Chubbyman2/waifu-list-api/blob/main/static/" + result["image"]
             return result
         else:
@@ -166,6 +168,7 @@ class WaifuList(Resource):
             db.session.commit() # Always remember to commit when making changes!
 
             # Return full img link
+            result = result.json()
             result["image"] = "https://github.com/Chubbyman2/waifu-list-api/blob/main/static/" + result["image"]
             return result
         else:
@@ -190,6 +193,9 @@ class WaifuList(Resource):
         if result:
             db.session.delete(result)
             db.session.commit()
+
+            # Return full img link
+            result = result.json()
             result["image"] = "https://github.com/Chubbyman2/waifu-list-api/blob/main/static/" + result["image"]
             return result
         else: # If there aren't adequate query params, or if it's been deleted already
