@@ -13,18 +13,18 @@
         <thead>
             <tr>
                 <!-- th is for table header cell, td is for table data cell -->
+                <th>Rank</th>
                 <th>Name</th>
                 <th>Anime</th>
-                <th>Rank</th>
             </tr>
         </thead>
 
         <!-- Table body stuff-->
         {%for i in range(0, len)%}
         <tr>
+            <td>{{ waifus[i]["rank"] }}</td>
             <td>{{ waifus[i]["name"] }}</td>
             <td>{{ waifus[i]["anime"] }}</td>
-            <td>{{ waifus[i]["rank"] }}</td>
         </tr>
         {%endfor%}
     </table>
