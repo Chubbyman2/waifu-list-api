@@ -52,23 +52,11 @@ def waifu_list():
     # con = sqlite3.connect("waifu_database.db")
     cur = con.cursor()
 
-    '''
-    # If deploying locally gives you issues
-    cur.execute("""CREATE TABLE IF NOT EXISTS waifu_entry (
-            id INT PRIMARY KEY,
-            name STR,
-            anime STR,
-            rank INT,
-            image STR
-    )""")
-    print("Table successfully created.")
-    '''
-
+    cur.execute("CREATE TABLE IF NOT EXISTS waifu_entry(id int, name varchar(255), anime varchar(255), rank int, image varchar(255))")
     cur.execute("SELECT * from waifu_entry ORDER BY rank")
     waifus = cur.fetchall()
     cur.close()
     con.close()
-
 
     return waifus
 
