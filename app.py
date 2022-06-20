@@ -55,6 +55,7 @@ def waifu_list():
     waifus = cur.fetchall()
     cur.close()
     con.close()
+    print(waifus[0]["image"])
 
     return waifus
 
