@@ -3,6 +3,9 @@ from flask import request
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Resource, reqparse, abort, fields, marshal_with
 
+# Just for the full img link
+GITHUB_REPO = "https://github.com/Chubbyman2/waifu-list-api/blob/main/static/"
+
 # For admin access privileges
 PASSWORD = os.environ["PASSWORD"]
 # PASSWORD = "Melanie"
@@ -107,6 +110,9 @@ class WaifuList(Resource):
         db.session.add(waifu)
         db.session.commit()
 
+        # Return full img link
+        waifu["image"] = "https://github.com/Chubbyman2/waifu-list-api/blob/main/static/" + waifu["image"]
+
         # Remember to return only JSONs!
         # No strings, no ints, no JSON + strings!!!
         return waifu
@@ -122,6 +128,8 @@ class WaifuList(Resource):
 
         result = query(waifu_id=args["id"], waifu_name=args["name"], waifu_rank=args["rank"])
         if result:
+            # Return full img link
+            result["image"] = "https://github.com/Chubbyman2/waifu-list-api/blob/main/static/" + result["image"]
             return result
         else:
             abort(409, message="Cannot query without id, name, or rank parameters. Please enter at least one.")
@@ -156,6 +164,9 @@ class WaifuList(Resource):
             if args["image"]:
                 result.image = args["image"]
             db.session.commit() # Always remember to commit when making changes!
+
+            # Return full img link
+            result["image"] = "https://github.com/Chubbyman2/waifu-list-api/blob/main/static/" + result["image"]
             return result
         else:
             abort(409, message="Cannot use PUT without ID parameter.")
@@ -179,6 +190,7 @@ class WaifuList(Resource):
         if result:
             db.session.delete(result)
             db.session.commit()
+            result["image"] = "https://github.com/Chubbyman2/waifu-list-api/blob/main/static/" + result["image"]
             return result
         else: # If there aren't adequate query params, or if it's been deleted already
             abort(409, message="Cannot find entry. Please check input parameters, or whether the entry still exists.")
