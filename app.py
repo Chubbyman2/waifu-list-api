@@ -51,11 +51,20 @@ def waifu_list():
     )
     # con = sqlite3.connect("waifu_database.db")
     cur = con.cursor()
+    cur.execute("DROP TABLE waifu_entry")
+    print("Table successfully deleted.")
+    cur.execute("""CREATE TABLE IF NOT EXISTS waifu_entry (
+            id INT PRIMARY KEY,
+            name STR,
+            anime STR,
+            rank INT,
+            image STR
+    )""")
+    print("Table successfully created.")
     cur.execute("SELECT * from waifu_entry ORDER BY rank")
     waifus = cur.fetchall()
     cur.close()
     con.close()
-    print(waifus[0]["image"])
 
     return waifus
 
