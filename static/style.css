@@ -10,6 +10,11 @@
     padding: 8px;
 }
 
+.waifu-table thead tr th {
+    background-color: black;
+    color: white;
+}
+
 .waifu-table th {
     font-weight: bold;
     text-transform: uppercase;
@@ -18,11 +23,6 @@
 /* Every other table entry, make the bg gray */
 .waifu-table tr:nth-child(even) {
     background-color: #dddddd;
-}
-
-.waifu-table tr:hover {
-    background-color: black;
-    color: white;
 }
 
 .waifu-table tr td {
