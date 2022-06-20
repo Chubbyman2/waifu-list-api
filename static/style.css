@@ -24,3 +24,7 @@
     background-color: black;
     color: white;
 }
+
+.waifu-table tr td {
+    text-align: center;
+}
