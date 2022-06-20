@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Charles' Waifu Database</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- This is the manual override for importing css files with Flask -->
+    <!-- If the CSS doesn't reload properly, do CTRL + SHIFT + R to reload cache -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <ol>
+    <table class="waifu-table">
+        <!-- Table head stuff -->
+        <thead>
+            <tr>
+                <!-- th is for table header cell, td is for table data cell -->
+                <th>Name</th>
+                <th>Anime</th>
+                <th>Rank</th>
+            </tr>
+        </thead>
+
+        <!-- Table body stuff-->
         {%for i in range(0, len)%}
-        <li>{{ waifus[i]["name"] }}</li>
-        <ul>
-            <li>Anime: {{ waifus[i]["anime"] }}</li>
-            <li>Rank: {{ waifus[i]["rank"] }}</li>
-        </ul>
+        <tr>
+            <td>{{ waifus[i]["name"] }}</td>
+            <td>{{ waifus[i]["anime"] }}</td>
+            <td>{{ waifus[i]["rank"] }}</td>
+        </tr>
         {%endfor%}
-    </ol>
+    </table>
     
 </body>
 </html>
