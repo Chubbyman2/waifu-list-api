@@ -11,6 +11,7 @@
 }
 
 .waifu-table thead tr th {
+    font-size: 300%;
     background-color: black;
     color: white;
 }
@@ -26,5 +27,6 @@
 }
 
 .waifu-table tr td {
+    font-size: 300%;
     text-align: center;
 }
