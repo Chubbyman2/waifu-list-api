@@ -24,22 +24,23 @@
         {%for i in range(0, len)%}
         <tr>
             <!-- PyMySQL format -->
-            <td>{{ waifus[i]["rank"] }}</td>
-            <td>{{ waifus[i]["name"] }}</td>
-            <td>{{ waifus[i]["anime"] }}</td>
+            <td width="10%">{{ waifus[i]["rank"] }}</td>
+            <td width="30%">{{ waifus[i]["name"] }}</td>
+            <td width="30%">{{ waifus[i]["anime"] }}</td>
             
             <!-- If you wanna do online imgs
-            <td width="50%"><img src="{{ waifus[i]['image'] }}" width="50%"></td>
+            <td width="30%"><img src="{{ waifus[i]['image'] }}" width="100%"></td>
             -->
 
             <!-- If you wanna do local files -->
-            <td width="50%"><img src="{{ url_for('static', filename='waifus/')}}{{ waifus[i]['image'] }}" width="50%"></td>
+            <td width="30%"><img src="{{ url_for('static', filename='waifus/')}}{{ waifus[i]['image'] }}" width="100%"></td>
             
-            <!-- This is the sqlite3 format
-            <td>{{ waifus[i][3] }}</td>
-            <td>{{ waifus[i][1] }}</td>
-            <td>{{ waifus[i][2] }}</td>
-            <td width="50%"><img src="{{ url_for('static', filename='')}}{{ waifus[i][4] }}" width="50%"></td>
+
+            <!-- This is the sqlite3 format 
+            <td width="10%">{{ waifus[i][3] }}</td>
+            <td width="30%">{{ waifus[i][1] }}</td>
+            <td width="30%">{{ waifus[i][2] }}</td>
+            <td width="30%"><img src="{{ url_for('static', filename='waifus/')}}{{ waifus[i][4] }}" width="100%"></td>
             -->
         </tr>
         {%endfor%}
