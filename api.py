@@ -3,9 +3,6 @@ from flask import request
 from flask_sqlalchemy import SQLAlchemy
 from flask_restful import Resource, reqparse, abort, fields, marshal_with
 
-# Just for the full img link
-GITHUB_REPO = "https://github.com/Chubbyman2/waifu-list-api/blob/main/static/"
-
 # For admin access privileges
 PASSWORD = os.environ["PASSWORD"]
 # PASSWORD = "Melanie"
@@ -168,7 +165,7 @@ class WaifuList(Resource):
     def delete(self):
         '''
         DELETE is basically GET, but you remove the entry at the end.
-        Use the same helper function.        
+        Use the same helper function.
         '''
         args = waifu_args.parse_args()
 
