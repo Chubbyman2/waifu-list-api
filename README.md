@@ -39,11 +39,14 @@ zipp==3.8.0
 ```
 
 ### Deploying Locally
+Set to correct project directory:
+```cd waifu-list-api```
+
 With virtual environment:
 ```python app.py```
 
 Then, using a separate command terminal:
-```python test.py```
+```python tests/demo.py```
 
 ## Built With
 ### Flask-RESTful
