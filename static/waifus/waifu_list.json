@@ -1,0 +1,71 @@
+[{
+    "id": 1,
+    "name": "Lynn Wiles",
+    "anime": "Pulse",
+    "rank": 1,
+    "image": "lynn_wiles.png"
+},
+{
+    "id": 2,
+    "name": "Makise Kurisu",
+    "anime": "Steins;Gate",
+    "rank": 2,
+    "image": "makise_kurisu.png"
+},
+{
+    "id": 3,
+    "name": "C.C.",
+    "anime": "Code Geass",
+    "rank": 3,
+    "image": "c_c.png"
+},
+{
+    "id": 4,
+    "name": "Misa Amane",
+    "anime": "Death Note",
+    "rank": 4,
+    "image": "misa_amane.png"
+},
+{
+    "id": 5,
+    "name": "Zero Two",
+    "anime": "Darling in the Franxx",
+    "rank": 5,
+    "image": "zero_two.png"
+},
+{
+    "id": 6,
+    "name": "Kei Karuizawa",
+    "anime": "Classroom of the Elite",
+    "rank": 6,
+    "image": "kei_karuizawa.png"
+},
+{
+    "id": 7,
+    "name": "Ayano Tateyama",
+    "anime": "Kagerou Project/Mekakucity Actors",
+    "rank": 7,
+    "image": "ayano_tateyama.png"
+},
+{
+    "id": 8, 
+    "name": "Makoto Niijima",
+    "anime": "Persona 5",
+    "rank": 8,
+    "image": "makoto_niijima.png"
+},
+{
+    "id": 9,
+    "name": "Nia Teppelin",
+    "anime": "Gurren Lagann",
+    "rank": 9,
+    "image": "nia_teppelin.png"
+},
+{
+    "id": 10,
+    "name": "Bianca Carlyle",
+    "anime": "Mobile Suit Gundam Thunderbolt",
+    "rank": 10,
+    "image": "bianca_carlyle.png"
+}
+]
