@@ -67,5 +67,292 @@
     "anime": "Mobile Suit Gundam Thunderbolt",
     "rank": 10,
     "image": "bianca_carlyle.png"
+},
+{
+    "id": 11,
+    "name": "Hitagi Senjougahara",
+    "anime": "Monogatari",
+    "rank": 11,
+    "image": "hitagi_senjougahara.png"
+},
+{
+    "id": 12,
+    "name": "Lacia",
+    "anime": "Beatless",
+    "rank": 12,
+    "image": "lacia.png"
+},
+{
+    "id": 13,
+    "name": "Sylvia Lyyneheym",
+    "anime": "Gakusen Toshi Asterisk",
+    "rank": 13,
+    "image": "sylvia_lyyneheym.png"
+},
+{
+    "id": 14,
+    "name": "Frederica Greenhill",
+    "anime": "Legend of the Galactic Heroes",
+    "rank": 14,
+    "image": "frederica_greenhill.png"
+},
+{
+    "id": 15,
+    "name": "Inori Yuzuriha",
+    "anime": "Guilty Crown",
+    "rank": 15,
+    "image": "inori_yuzuriha.png"
+},
+{
+    "id": 16,
+    "name": "Canaria Utara",
+    "anime": "Qualidea Code",
+    "rank": 16,
+    "image": "canaria_utara.png"
+},
+{
+    "id": 17,
+    "name": "Yeul-ah",
+    "anime": "Drug Candy",
+    "rank": 17,
+    "image": "yeul-ah.png"
+},
+{
+    "id": 18,
+    "name": "Vladilena Milize",
+    "anime": "86",
+    "rank": 18,
+    "image": "vladilena_milize.png"
+},
+{
+    "id": 19,
+    "name": "Kyouko Hori",
+    "anime": "Horimiya",
+    "rank": 19,
+    "image": "kyouko_hori.png"
+},
+{
+    "id": 20,
+    "name": "Aila Jyrkiäinen", 
+    "anime": "Gundam Build Fighters",
+    "rank": 20,
+    "image": "aila_jyrkiainen.png"
+},
+{
+    "id": 21,
+    "name": "Carly Carmine",
+    "anime": "Yu-Gi-Oh! 5D's",
+    "rank": 21,
+    "image": "carly_carmine.png"
+},
+{
+    "id": 22,
+    "name": "Sonoshee McLaren",
+    "anime": "Redline",
+    "rank": 22,
+    "image": "sonoshee_mclaren.png"
+},
+{
+    "id": 23,
+    "name": "Lacus Clyne",
+    "anime": "Mobile Suit Gundam Seed",
+    "rank": 23,
+    "image": "lacus_clyne.png"
+},
+{
+    "id": 24,
+    "name": "Freyja Wion",
+    "anime": "Macross Delta",
+    "rank": 24,
+    "image": "freyja_wion.png"
+},
+{
+    "id": 25,
+    "name": "Stella Vermillion",
+    "anime": "Rakudai Kishi no Cavalry",
+    "rank": 25,
+    "image": "stella_vermillion.png"
+},
+{
+    "id": 26,
+    "name": "Julis-Alexia Marie Florentia Renate von Riessfeld",
+    "anime": "Gakusen Toshi Asterisk",
+    "rank": 26,
+    "image": "julis_riessfeld.png"
+},
+{
+    "id": 26,
+    "name": "Suu Komura",
+    "anime": "Zettai Naru Isolator",
+    "rank": 26,
+    "image": "suu_komura.png"
+},
+{
+    "id": 27,
+    "name": "Yumiko Azu", 
+    "anime": "Zettai Naru Isolator",
+    "rank": 27,
+    "image": "yumiko_azu.png"
+},
+{
+    "id": 28,
+    "name": "Kazuki Kazami",
+    "anime": "Grisaia no Kajitsu/Meikyuu/Rakuen",
+    "rank": 28,
+    "image": "kazuki_kazami.png"
+},
+{
+    "id": 29,
+    "name": "Shokuhou Misaki",
+    "anime": "Toaru Kagaku no Railgun",
+    "rank": 29,
+    "image": "shokuhou_misaki.png"
+},
+{
+    "id": 30,
+    "name": "Mikoto Misaka",
+    "anime": "Toaru Kagaku no Railgun",
+    "rank": 30,
+    "image": "mikoto_misaka.png"
+},
+{
+    "id": 31,
+    "name": "Mai Sakurajima",
+    "anime": "Rascal Does Not Dream of Bunny Girl Senpai",
+    "rank": 31,
+    "image": "mai_sakurajima.png"
+},
+{
+    "id": 32,
+    "name": "Amane Suou",
+    "anime": "Grisaia no Kajitsu/Meikyuu/Rakuen",
+    "rank": 32,
+    "image": "amane_suou.png"
+},
+{
+    "id": 33,
+    "name": "Megumi Kato",
+    "anime": "Saenai Heroine no Sodatekata",
+    "rank": 33,
+    "image": "megumi_kato.png"
+},
+{
+    "id": 34,
+    "name": "Kasumigaoka Utaha",
+    "anime": "Saenai Heroine no Sodatekata",
+    "rank": 34,
+    "image": "kasumigaoka_utaha.png"
+},
+{
+    "id": 35,
+    "name": "Yukino Yukinoshita",
+    "anime": "Yahari Ore no Seishun Rabukome wa Machigatteiru",
+    "rank": 35,
+    "image": "yukino_yukinoshita.png"
+},
+{
+    "id": 36,
+    "name": "Subaru Konoe",
+    "anime": "Mayo Chiki",
+    "rank": 36,
+    "image": "subaru_konoe.png"
+},
+{
+    "id": 37,
+    "name": "Kurumi Tokisaki", 
+    "anime": "Date a Live",
+    "rank": 37,
+    "image": "kurumi_tokisaki.png"
+},
+{
+    "id": 38,
+    "name": "Kuroyukihime",
+    "anime": "Accel World",
+    "rank": 38,
+    "image": "kuroyukihime.png"
+},
+{
+    "id": 39, 
+    "name": "Krulcifer Einfolk",
+    "anime": "Saijaku Muhai no Bahamut",
+    "rank": 39, 
+    "image": "krulcifer_einfolk.png"
+},
+{
+    "id": 40,
+    "name": "Saki Rukino",
+    "anime": "Kakumeiki Valvrave",
+    "rank": 40,
+    "image": "saki_rukino.png"
+},
+{
+    "id": 41,
+    "name": "Angelina Sirius",
+    "anime": "Mahouka Koukou no Rettousei",
+    "rank": 41,
+    "image": "angelina_sirius.png"
+},
+{
+    "id": 42, 
+    "name": "Alisa Ilinichina Amiella",
+    "anime": "God Eater",
+    "rank": 42,
+    "image": "alisa_amiella.png"
+},
+{
+    "id": 43,
+    "name": "Akira Renbokouji",
+    "anime": "Kakumeiki Valvrave",
+    "rank": 43,
+    "image": "akira_renbokouji.png"
+},
+{
+    "id": 44,
+    "name": "Ryoko Okami", 
+    "anime": "Okami-san and Her Seven Companions",
+    "rank": 44,
+    "image": "ryoko_okami.png"
+},
+{
+    "id": 45,
+    "name": "Eucliwood Hellscythe", 
+    "anime": "Kore wa Zombie Desu ka?",
+    "rank": 45,
+    "image": "eucliwood_hellscythe.png"
+},
+{
+    "id": 46,
+    "name": "Kiana Kaslana",
+    "anime": "Honkai Impact 3rd",
+    "rank": 46,
+    "image": "kiana_kaslana.png"
+},
+{
+    "id": 47,
+    "name": "Exusiai",
+    "anime": "Arknights",
+    "rank": 47,
+    "image": "exusiai.png"
+},
+{
+    "id": 48,
+    "name": "Surtr",
+    "anime": "Arknights",
+    "rank": 48,
+    "image": "surtr.png"
+},
+{
+    "id": 49, 
+    "name": "Enterprise",
+    "anime": "Azur Lane",
+    "rank": 49,
+    "image": "enterprise.png"
+},
+{
+    "id": 50,
+    "name": "Lucina",
+    "anime": "Fire Emblem",
+    "rank": 50,
+    "image": "lucina.png"
 }
 ]
