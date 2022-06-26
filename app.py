@@ -16,7 +16,7 @@ api = Api(app)
 # BASE = "http://127.0.0.1:5000/"
 
 # Heroku ver
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URI"]
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["CLEARDB_DATABASE_URL"]
 BASE = "https://waifu-list-api.herokuapp.com"
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # Just to get rid of that annoying warning message
@@ -40,15 +40,15 @@ def waifu_list():
     Somewhat obviously, you cannot call the API from within the API.
     So I have to use a different method of accessing the database (sqlite3).
     '''
-    
     con = pymysql.connect(
-        host="sql5.freesqldatabase.com",
-        database="sql5500726",
-        user="sql5500726",
-        password="whE69C32BV",
+        host="us-cdbr-east-05.cleardb.net",
+        database="heroku_0eb5ef3c60456be",
+        user=os.environ["DB_USER"],
+        password=os.environ["DB_PASSWORD"],
         charset="utf8mb4",
         cursorclass=pymysql.cursors.DictCursor
     )
+    
     # con = sqlite3.connect("waifu_database.db")
     cur = con.cursor()
 
