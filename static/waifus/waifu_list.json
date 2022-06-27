@@ -181,32 +181,25 @@
     "image": "julis_riessfeld.png"
 },
 {
-    "id": 26,
+    "id": 27,
     "name": "Suu Komura",
     "anime": "Zettai Naru Isolator",
-    "rank": 26,
+    "rank": 27,
     "image": "suu_komura.png"
 },
 {
-    "id": 27,
+    "id": 28,
     "name": "Yumiko Azu", 
     "anime": "Zettai Naru Isolator",
-    "rank": 27,
+    "rank": 28,
     "image": "yumiko_azu.png"
 },
 {
-    "id": 28,
+    "id": 29,
     "name": "Kazuki Kazami",
     "anime": "Grisaia no Kajitsu/Meikyuu/Rakuen",
-    "rank": 28,
-    "image": "kazuki_kazami.png"
-},
-{
-    "id": 29,
-    "name": "Shokuhou Misaki",
-    "anime": "Toaru Kagaku no Railgun",
     "rank": 29,
-    "image": "shokuhou_misaki.png"
+    "image": "kazuki_kazami.png"
 },
 {
     "id": 30,
@@ -217,142 +210,149 @@
 },
 {
     "id": 31,
-    "name": "Mai Sakurajima",
-    "anime": "Rascal Does Not Dream of Bunny Girl Senpai",
+    "name": "Shokuhou Misaki",
+    "anime": "Toaru Kagaku no Railgun",
     "rank": 31,
-    "image": "mai_sakurajima.png"
+    "image": "shokuhou_misaki.png"
 },
 {
     "id": 32,
-    "name": "Amane Suou",
-    "anime": "Grisaia no Kajitsu/Meikyuu/Rakuen",
+    "name": "Mai Sakurajima",
+    "anime": "Rascal Does Not Dream of Bunny Girl Senpai",
     "rank": 32,
-    "image": "amane_suou.png"
+    "image": "mai_sakurajima.png"
 },
 {
     "id": 33,
-    "name": "Megumi Kato",
-    "anime": "Saenai Heroine no Sodatekata",
+    "name": "Amane Suou",
+    "anime": "Grisaia no Kajitsu/Meikyuu/Rakuen",
     "rank": 33,
-    "image": "megumi_kato.png"
+    "image": "amane_suou.png"
 },
 {
     "id": 34,
-    "name": "Kasumigaoka Utaha",
+    "name": "Megumi Kato",
     "anime": "Saenai Heroine no Sodatekata",
     "rank": 34,
-    "image": "kasumigaoka_utaha.png"
+    "image": "megumi_kato.png"
 },
 {
     "id": 35,
-    "name": "Yukino Yukinoshita",
-    "anime": "Yahari Ore no Seishun Rabukome wa Machigatteiru",
+    "name": "Kasumigaoka Utaha",
+    "anime": "Saenai Heroine no Sodatekata",
     "rank": 35,
-    "image": "yukino_yukinoshita.png"
+    "image": "kasumigaoka_utaha.png"
 },
 {
     "id": 36,
-    "name": "Subaru Konoe",
-    "anime": "Mayo Chiki",
+    "name": "Yukino Yukinoshita",
+    "anime": "Yahari Ore no Seishun Rabukome wa Machigatteiru",
     "rank": 36,
-    "image": "subaru_konoe.png"
+    "image": "yukino_yukinoshita.png"
 },
 {
     "id": 37,
-    "name": "Kurumi Tokisaki", 
-    "anime": "Date a Live",
+    "name": "Subaru Konoe",
+    "anime": "Mayo Chiki",
     "rank": 37,
-    "image": "kurumi_tokisaki.png"
+    "image": "subaru_konoe.png"
 },
 {
     "id": 38,
+    "name": "Kurumi Tokisaki", 
+    "anime": "Date a Live",
+    "rank": 38,
+    "image": "kurumi_tokisaki.png"
+},
+{
+    "id": 39,
     "name": "Kuroyukihime",
     "anime": "Accel World",
-    "rank": 38,
+    "rank": 39,
     "image": "kuroyukihime.png"
 },
 {
-    "id": 39, 
+    "id": 40, 
     "name": "Krulcifer Einfolk",
     "anime": "Saijaku Muhai no Bahamut",
-    "rank": 39, 
+    "rank": 40, 
     "image": "krulcifer_einfolk.png"
 },
 {
-    "id": 40,
+    "id": 41,
     "name": "Saki Rukino",
     "anime": "Kakumeiki Valvrave",
-    "rank": 40,
+    "rank": 41,
     "image": "saki_rukino.png"
 },
 {
-    "id": 41,
+    "id": 42,
     "name": "Angelina Sirius",
     "anime": "Mahouka Koukou no Rettousei",
-    "rank": 41,
+    "rank": 42,
     "image": "angelina_sirius.png"
 },
 {
-    "id": 42, 
+    "id": 43, 
     "name": "Alisa Ilinichina Amiella",
     "anime": "God Eater",
-    "rank": 42,
+    "rank": 43,
     "image": "alisa_amiella.png"
 },
 {
-    "id": 43,
+    "id": 44,
     "name": "Akira Renbokouji",
     "anime": "Kakumeiki Valvrave",
-    "rank": 43,
+    "rank": 44,
     "image": "akira_renbokouji.png"
 },
 {
-    "id": 44,
+    "id": 45,
     "name": "Ryoko Okami", 
     "anime": "Okami-san and Her Seven Companions",
-    "rank": 44,
+    "rank": 45,
     "image": "ryoko_okami.png"
 },
 {
-    "id": 45,
+    "id": 46,
     "name": "Eucliwood Hellscythe", 
     "anime": "Kore wa Zombie Desu ka?",
-    "rank": 45,
+    "rank": 46,
     "image": "eucliwood_hellscythe.png"
 },
 {
-    "id": 46,
+    "id": 47,
     "name": "Kiana Kaslana",
     "anime": "Honkai Impact 3rd",
-    "rank": 46,
+    "rank": 47,
     "image": "kiana_kaslana.png"
 },
 {
-    "id": 47,
+    "id": 48,
     "name": "Exusiai",
     "anime": "Arknights",
-    "rank": 47,
+    "rank": 48,
     "image": "exusiai.png"
 },
 {
-    "id": 48,
+    "id": 49,
     "name": "Surtr",
     "anime": "Arknights",
-    "rank": 48,
+    "rank": 49,
     "image": "surtr.png"
 },
 {
-    "id": 49, 
+    "id": 50, 
     "name": "Enterprise",
     "anime": "Azur Lane",
-    "rank": 49,
+    "rank": 50,
     "image": "enterprise.png"
 },
 {
-    "id": 50,
+    "id": 51,
     "name": "Lucina",
     "anime": "Fire Emblem",
-    "rank": 50,
+    "rank": 51,
     "image": "lucina.png"
 }
 ]
