@@ -7,7 +7,7 @@ I'm tired of continuously updating my waifu list Google Doc, so I've decided to 
 To get started locally, clone the repo and make the following alterations:
 * app.py: Change BASE variable assignment to local host and app.config to the sqlite db. Also change pymysql to sqlite3 accordingly.
 * api.py: Change PASSWORD variable assignment to anything you want
-* test.py: Change BASE and PASSWORD to what you set previously
+* demo.py: Change BASE and PASSWORD to what you set previously
 
 ### Prerequisites
 ```
@@ -46,7 +46,10 @@ With virtual environment:
 ```python app.py```
 
 Then, using a separate command terminal:
-```python tests/demo.py```
+```python demo.py```
+
+### Integrating with Local Scripts
+```demo.py``` provides a bunch of helper functions for easily communicating with the REST API, without you having to learn requests or HTTP methods. Just make sure to know your API base path (BASE) and password (PASSWORD). 
 
 ## Built With
 ### Flask-RESTful
@@ -59,7 +62,7 @@ Used for creating the mySQL database, as well as sending HTTP methods to the RES
 Since you can't call an API inside of the API itself, I used SQLite3 to retrieve the waifu entries from the database to display on the front end. Since I'm storing the waifus using a remote database, I had to switch to PyMySQL for the deployed version.
 
 ### Heroku
-THIS TOOK WAY LONGER THAN EXPECTED. Deployment is so annoying, I swear... Anyways, the API endpoint and home page are hosted using Heroku, while the SQL database is hosted using <a href="https://www.freesqldatabase.com/">FreeSQLDatabase.com</a> (because it's free).
+THIS TOOK WAY LONGER THAN EXPECTED. Deployment is so annoying, I swear... Anyways, the API endpoint and home page are hosted using Heroku, while the SQL database is hosted using Heroku's provided ClearDB MySQL. I had to fix this since FreeSQLDatabase.com only provides a trial period...
 
 ## License
 This project is licensed under the MIT License - see the <a href="https://github.com/Chubbyman2/waifu-list-api/blob/main/LICENSE">LICENSE</a> file for details.
