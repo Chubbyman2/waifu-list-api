@@ -75,7 +75,7 @@ class WaifuList(Resource):
     def post(self):
         '''
         POST is for adding new entries to the list/database.
-        The description is made optional, with all else being mandatory.
+        All parameters are mandatory (cuz it's basically an initial commit).
         '''
 
         # Parse inputted args and create a new waifu entry
