@@ -1,4 +1,6 @@
 notes.txt
+waifu-list-project.txt
 waifu_database.db
 __pycache__
 static/waifus/waifu_list_in_progress.json
+tests/test.py
