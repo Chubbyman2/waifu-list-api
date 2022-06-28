@@ -49,7 +49,7 @@ Then, using a separate command terminal:
 ```python demo.py```
 
 ### Integrating with Local Scripts
-```demo.py``` provides a bunch of helper functions for easily communicating with the REST API, without you having to learn requests or HTTP methods. Just make sure to know your API base path (BASE) and password (PASSWORD). 
+<a href="https://github.com/Chubbyman2/waifu-list-api/blob/main/demo.py">```demo.py```</a> provides a bunch of helper functions for easily communicating with the REST API, without you having to learn requests or HTTP methods. Just make sure to know your API base path (BASE) and password (PASSWORD). 
 
 ## Built With
 ### Flask-RESTful
