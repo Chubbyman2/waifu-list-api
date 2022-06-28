@@ -20,9 +20,13 @@ def add_json(BASE, jsonpath, PASSWORD=None):
             "image": waifu_dict["image"],
             "password": PASSWORD
         }
-        posted = requests.post(BASE + "waifulist", query).json()
-        posted["image"] = "https://waifu-list-api.herokuapp.com/static/waifus/" + posted["image"]
-        print(f"{posted['name']} entry posted.")
+        try:
+            posted = requests.post(BASE + "waifulist", query).json()
+            posted["image"] = "https://waifu-list-api.herokuapp.com/static/waifus/" + posted["image"]
+            print(f"{posted['name']} entry posted.")
+        except KeyError: 
+            print(posted["message"])
+            return posted
     
     print("All entries added.")
 
