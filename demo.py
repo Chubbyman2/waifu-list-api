@@ -82,7 +82,6 @@ def add_one(BASE, id, name, anime, rank, image, PASSWORD=None):
         "image": image,
         "password": PASSWORD
     }
-
     posted = requests.post(BASE + "waifulist", query).json()
     try:
         posted["image"] = "https://waifu-list-api.herokuapp.com/static/waifus/" + posted["image"]
@@ -91,6 +90,52 @@ def add_one(BASE, id, name, anime, rank, image, PASSWORD=None):
     except KeyError: # For the abort cases (no/wrong password, missing param, etc)
         print(posted["message"])
         return posted
+
+
+def get_one(BASE, id=None, name=None, rank=None, PASSWORD=None):
+    '''
+    Retrieves one entry from the database using GET.
+    Since id, name, rank are all unique, allow for querying by these options.
+    There is an abort function in place in case user doesn't enter any of these.
+    image is not a parameter because you cannot query by image path.
+    '''
+    query = {
+        "id": id,
+        "name": name,
+        "rank": rank,
+        "password": PASSWORD
+    }
+    retrieved = requests.get(BASE + "waifulist", query).json()
+    try:
+        retrieved["image"] = "https://waifu-list-api.herokuapp.com/static/waifus/" + retrieved["image"]
+        print(f"{retrieved['name']} entry retrieved.")
+        return retrieved
+    except KeyError: 
+        print(retrieved["message"])
+        return retrieved
+
+
+def update_one(BASE, id, name=None, anime=None, rank=None, image=None, PASSWORD=None):
+    '''
+    Only id is required for PUT, 
+    the rest are optional depending on what needs to be updated.
+    '''
+    query = {
+        "id": id,
+        "name": name,
+        "anime": anime,
+        "rank": rank,
+        "image": image,
+        "password": PASSWORD
+    }
+    updated = requests.put(BASE + "waifulist", query).json()
+    try:
+        updated["image"] = "https://waifu-list-api.herokuapp.com/static/waifus/" + updated["image"]
+        print(f"{updated['name']} entry updated.")
+        return updated
+    except KeyError: 
+        print(updated["message"])
+        return updated
 
 
 def delete_one(BASE, id=None, name=None, rank=None, PASSWORD=None):
@@ -115,9 +160,31 @@ def delete_one(BASE, id=None, name=None, rank=None, PASSWORD=None):
 
 
 if __name__ == "__main__":
-    BASE = "https://waifu-list-api.herokuapp.com/"
-    PASSWORD = "your_password_here"
+    # BASE = "https://waifu-list-api.herokuapp.com/"
+    # PASSWORD = "your-password-here"
 
+    # For local testing
+    BASE = "http://127.0.0.1:5000/"
+    PASSWORD = "Melanie"
 
+    delete_all(BASE, PASSWORD)
+    add_json(BASE, "static/waifus/waifu_list.json", PASSWORD)
 
+    ### Individual tests ###
+    # PUT
+    update_one(BASE, 51, anime="Fire Emblem Awakening", PASSWORD=PASSWORD)
 
+    # GET
+    new_anime = get_one(BASE, name="Lucina")["anime"]
+    print(new_anime) # It works!
+
+    # DELETE
+    delete_one(BASE, rank=51, PASSWORD=PASSWORD)
+
+    # ADD
+    add_one(BASE, 51, "Lucina", "Fire Emblem", 51, "lucina.png", PASSWORD)
+    
+    # GET (again)
+    new_entry = get_one(BASE, name="Lucina")
+    for key, value in new_entry.items():
+        print(f"{key.capitalize()}: {value}")
