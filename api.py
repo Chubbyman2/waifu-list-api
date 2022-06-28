@@ -5,7 +5,7 @@ from flask_restful import Resource, reqparse, abort, fields, marshal_with
 
 # For admin access privileges
 PASSWORD = os.environ["PASSWORD"]
-# PASSWORD = "Melanie"
+# PASSWORD = "Melanie" # For local testing
 
 # Create database, bind to app later
 db = SQLAlchemy()
@@ -55,7 +55,7 @@ def query(waifu_id=None, waifu_name=None, waifu_rank=None):
         result = WaifuEntry.query.filter_by(name=waifu_name).first()
         return result
     elif waifu_rank:
-        result = WaifuEntry.query.filter_by(name=waifu_rank).first()
+        result = WaifuEntry.query.filter_by(rank=waifu_rank).first()
         return result
     else:
         return None
